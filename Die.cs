@@ -19,7 +19,13 @@ namespace Dice_Game
         public Die(int roll)
         {
             _generator = new Random();
-            _roll = roll;
+            if (roll < 1)
+                _roll = 1;
+            else if (roll > 6)
+                _roll = 6;
+            else
+                _roll = roll;
+
 
         }
 
@@ -38,22 +44,77 @@ namespace Dice_Game
         {
             if(_roll == 1)
             {
-                Console.WriteLine("____________");
-                Console.WriteLine("|          |");
-                Console.WriteLine("|          |");
-                Console.WriteLine("|    ()    |");
-                Console.WriteLine("|          |");
-                Console.WriteLine("|__________|");
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|     ()     |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
             }
             else if (_roll == 2)
             {
-                Console.WriteLine("____________");
-                Console.WriteLine("| ()       |");
-                Console.WriteLine("|          |");
-                Console.WriteLine("|          |");
-                Console.WriteLine("|       () |");
-                Console.WriteLine("|__________|");
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("| ()         |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|        ()  |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
             }
+            else if (_roll == 3)
+            {
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("| ()         |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|     ()     |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|         () |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
+            }
+            else if (_roll == 4)
+            {
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
+            }
+            else if (_roll == 5)
+            {
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("|     ()     |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
+            }
+            else if (_roll == 6)
+            {
+                Console.WriteLine();
+                Console.WriteLine("_____________");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|            |");
+                Console.WriteLine("| ()      () |");
+                Console.WriteLine("|____________|");
+                Console.WriteLine();
+            }
+
         }
 
     }
