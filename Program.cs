@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("hi");
+            Die dice1 = new Die();
+            dice1.DrawRoll();
+            Die dice2 = new Die();
+            dice2.DrawRoll();
         }
     }
 }
