@@ -114,14 +114,7 @@ namespace Dice_Game
                 Console.WriteLine("| ()      () |");
                 Console.WriteLine("|____________|");
                 Console.WriteLine();
-            }
-            
-        }
-        public void Bet()
-        {
-
+            }   
         }
     }
-    
-
 }

@@ -4,11 +4,177 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hi");
+            int BetType = 0;
+            double bet = 0, balance = 100.00, win = 0;
+            bool done0  = false;
+            bool done1 = false;
             Die dice1 = new Die();
-            dice1.DrawRoll();
             Die dice2 = new Die();
-            dice2.DrawRoll();
+            
+            Console.WriteLine("Welcome to Dice Game!");//Dice Game
+            while (!done0)
+            {
+                done1 = false;
+                Console.WriteLine("Please enter the # of the following Options");
+                Console.WriteLine(" _______________________");
+                Console.WriteLine("|1:Not Doubles          |");
+                Console.WriteLine("|2:Doubles              |");
+                Console.WriteLine("|3:Even Sum             |");
+                Console.WriteLine("|4:Odd Sum              |");
+                Console.WriteLine("|5:QUIT                 |");
+                Console.WriteLine("|/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\\|");
+                if (int.TryParse(Console.ReadLine(), out BetType)&&  BetType >= 1 && BetType <=5)
+                {
+                    if (BetType == 1)
+                    {
+                        while (!done1)
+                        {
+                            Console.WriteLine($"You Currently have ${Math.Round(balance, 2)}");
+                            Console.WriteLine("Enter Your Bet(MINIMUM 1$):");
+                            if (double.TryParse(Console.ReadLine(), out bet) && bet <= balance && bet >= 1)
+                            {
+                                Console.WriteLine("Rolling...");
+                                Thread.Sleep(1000);
+                                dice1 = new Die();
+                                dice2 = new Die();
+                                dice1.DrawRoll();
+                                dice2.DrawRoll();
+                                if (dice1 != dice2)
+                                {
+                                    win = bet / 2;
+                                    Console.WriteLine($"You won :{Math.Round(win, 2)}$");
+                                    balance = balance + win;
+                                    done1 = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Better Luck Next Time!");
+                                    balance = balance - bet;
+                                    done1 = true;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Input! try again.");
+                            }
+                        }
+                    }
+                    else if (BetType == 2)
+                    {
+                        while (!done1)
+                        {
+                            Console.WriteLine($"You Currently have ${Math.Round(balance, 2)}");
+                            Console.WriteLine("Enter Your Bet(MINIMUM 1$):");
+                            if (double.TryParse(Console.ReadLine(), out bet) && bet <= balance && bet >= 1)
+                            {
+                                Console.WriteLine("Rolling...");
+                                Thread.Sleep(1000);
+                                dice1 = new Die();
+                                dice2 = new Die();
+                                dice1.DrawRoll();
+                                dice2.DrawRoll();
+                                if (dice1 != dice2)
+                                {
+                                    win = bet * 2;
+                                    Console.WriteLine($"You won :{Math.Round(win, 2)}$");
+                                    balance = balance + win;
+                                    done1 = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Better Luck Next Time!");
+                                    balance = balance - bet;
+                                    done1 = true;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Input! try again.");
+                            }
+                        }
+                    }
+                    else if (BetType == 3)
+                    {
+                        while (!done1)
+                        {
+                            Console.WriteLine($"You Currently have ${Math.Round(balance, 2)}");
+                            Console.WriteLine("Enter Your Bet(MINIMUM 1$):");
+                            if (double.TryParse(Console.ReadLine(), out bet) && bet <= balance && bet >= 1)
+                            {
+                                Console.WriteLine("Rolling...");
+                                Thread.Sleep(1000);
+                                dice1.RollDie();
+                                dice2.RollDie();
+                                dice1.DrawRoll();
+                                dice2.DrawRoll();
+                                if (dice1 != dice2)
+                                {
+                                    win = bet;
+                                    Console.WriteLine($"You won :{Math.Round(win, 2)}$");
+                                    balance = balance + win;
+                                    done1 = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Better Luck Next Time!");
+                                    balance = balance - bet;
+                                    done1 = true;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Input! try again.");
+                            }
+                        }
+                    }
+                    else if (BetType == 4)
+                    {
+                        while (!done1)
+                        {
+                            Console.WriteLine($"You Currently have ${Math.Round(balance, 2)}");
+                            Console.WriteLine("Enter Your Bet(MINIMUM 1$):");
+                            if (double.TryParse(Console.ReadLine(), out bet) && bet <= balance && bet >= 1)
+                            {
+                                Console.WriteLine("Rolling...");
+                                Thread.Sleep(1000);
+                                dice1 = new Die();
+                                dice2 = new Die();
+                                dice1.DrawRoll();
+                                dice2.DrawRoll();
+                                if (dice1 != dice2)
+                                {
+                                    win = bet;
+                                    Console.WriteLine($"You won :{Math.Round(win, 2)}$");
+                                    balance = balance + win;
+                                    done1 = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Better Luck Next Time!");
+                                    balance = balance - bet;
+                                    done1 = true;
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid Input! try again.");
+                            }
+                        }
+                    }
+                    else if (BetType == 5)
+                    {
+                        Console.WriteLine("Have a good day!");
+                        Thread.Sleep(200);
+                        done0 = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("INVALID INPUT!");
+                }
+
+            }
         }
     }
 }
