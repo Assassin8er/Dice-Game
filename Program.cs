@@ -13,6 +13,12 @@
             Console.WriteLine("Welcome to Dice Game!");//Dice Game
             while (!done0)
             {
+                if (balance == 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Looks like you cant play anymore! Come again soon!");
+                    done0 = true;
+                }
                 done1 = false;
                 Console.WriteLine("Please enter the # of the following Options");
                 Console.WriteLine(" _______________________");
